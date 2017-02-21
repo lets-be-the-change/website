@@ -1,0 +1,18 @@
+.container-fluid{
+	margin:0 !important;
+	padding:0 !important;
+	color:#fff;
+}
+
+img{
+	max-width:100%;
+}
+
+.home-img{
+	width:100%;
+}
+
+.home-heads{
+	position: relative;
+	top:-250px;
+}
