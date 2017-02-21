@@ -19,7 +19,7 @@ img{
 
 .head-1{
 	position: absolute;
-	top: 30vh;
+	top: 40vh;
 	left: 1vw;
 	right: 1vw;
 	text-align: center;
@@ -27,24 +27,36 @@ img{
 
 .head-2{
 	position: absolute;
-	top: 130vh;
+	top: 120vh;
 	left: 1vw;
 	right: 1vw;
 	text-align: right;
+	padding-right: 5vw;
 }
 
 .head-3{
 	position: absolute;
-	top: 230vh;
+	top: 220vh;
 	left: 1vw;
 	right: 1vw;
 	text-align: left;
+	padding-left: 5vw;
 }
 
 .head-4{
 	position: absolute;
-	top: 330vh;
+	top: 320vh;
 	left: 1vw;
 	right: 1vw;
 	text-align: right;
+	padding-right: 5vw;
+}
+
+.head-icon img{
+	height: 10vh;
+	width: 10vw;
+}
+
+button{
+	border: 2px solid #fff !important;
 }
