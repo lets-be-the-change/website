@@ -2,6 +2,24 @@ body{
 	font-family: 'Roboto Mono', monospace;
 }
 
+nav{
+	padding: 0 5vw;
+}
+
+.nav li a{
+	padding-left: 3vw;
+	padding-right: 3vw;
+}
+
+.active{
+	border-bottom: 3px solid #fff;
+	color: #fff !important;
+}
+
+.nav li a:hover{
+	border-bottom: 3px solid #fff;
+}
+
 .lbtc-logo img{
 	height: 10vw;
 	width: 10vw;
@@ -28,6 +46,11 @@ img{
 	left: 1vw;
 	right: 1vw;
 	text-align: center;
+}
+
+.arrow img{
+	height: 10vh;
+	width: 10vh;
 }
 
 .head-2{
