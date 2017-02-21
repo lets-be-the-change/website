@@ -9,14 +9,42 @@ body{
 }
 
 img{
-	max-width:100%;
+	max-width:100vw;
+	height: 100vh;
 }
 
 .home-img{
 	width:100%;
 }
 
-.home-heads{
-	position: relative;
-	top:-250px;
+.head-1{
+	position: absolute;
+	top: 30vh;
+	left: 1vw;
+	right: 1vw;
+	text-align: center;
+}
+
+.head-2{
+	position: absolute;
+	top: 130vh;
+	left: 1vw;
+	right: 1vw;
+	text-align: right;
+}
+
+.head-3{
+	position: absolute;
+	top: 230vh;
+	left: 1vw;
+	right: 1vw;
+	text-align: left;
+}
+
+.head-4{
+	position: absolute;
+	top: 330vh;
+	left: 1vw;
+	right: 1vw;
+	text-align: right;
 }
