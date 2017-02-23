@@ -59,13 +59,34 @@
         <!-- content -->
         <div class="container-fluid">
             <div class="content">
-                <img class="home-img" src="images/track.png" alt="lbtc">
-                <span class="home-heads head-1">
+                <img id="carr-1" class="home-img carr-img" src="images/track.png" alt="lbtc">
+                <img id="carr-2" class="home-img carr-img" src="images/money.jpg" alt="lbtc">
+                <img id="carr-3" class="home-img carr-img" src="images/volu.jpg" alt="lbtc">
+                <span class="home-heads head-1" id="heads-1">
                     <h1>Help make B'lore</h1>
                     <h1>beautiful!</h1>
                     <br><br>
                     <div class="arrow">
-                        <a href="#goto-gallery"><img src="images/down-arrow.png" alt="down arrow"></a>
+                        <a class="arrow-btn" href="#"><img src="images/down-arrow.png" alt="down arrow"></a>
+                    </div>
+                </span>
+                <span class="home-heads head-1"  id="heads-2">
+                    <h1>Donate</h1>
+                    <h1>Help us do what we do.</h1>
+                    <button type="button" class="btn btn-secondary ">Contribute Here</button>
+                    <br><br>
+                    <div class="arrow">
+                        <a class="arrow-btn" href="#"><img src="images/down-arrow.png" alt="down arrow"></a>
+                    </div>
+                </span>
+                <span class="home-heads head-1"  id="heads-3">
+                    <h1>Volunteer</h1>
+                    <h4>Become one of the 500+</h4>
+                    <h4>registered volunteers.</h4>
+                    <button type="button" class="btn btn-secondary">Register Here</button>
+                    <br><br>
+                    <div class="arrow">
+                        <a class="arrow-btn" href="#"><img src="images/down-arrow.png" alt="down arrow"></a>
                     </div>
                 </span>
             </div>
@@ -128,10 +149,53 @@
 
 	</body>
     <script>
+      var i =0;
         
         $(document).ready(function(){
             // alert('hi');
-            
+            $("#carr-1").css("display","block");
+            $("#carr-2").css("display","none");
+            $("#carr-3").css("display","none");
+             $("heads-1").css("display","block");
+            $("#heads-2").css("display","none");
+            $("#heads-3").css("display","none");
+ 
+            $('.arrow-btn').click(function(){
+            i++;
+            i=i%3;
+      
+ 
+            if(i==0){
+                $("#carr-1").css("display","block");
+                $("#carr-2").css("display","none");
+                $("#carr-3").css("display","none");
+                 
+                  $("#heads-1").css("display","block");
+                  $("#heads-2").css("display","none");
+                 $("#heads-3").css("display","none");
+ 
+                    }
+            else if(i==1){
+                $("#carr-2").css("display","block");
+                $("#carr-1").css("display","none");
+                $("#carr-3").css("display","none");
+                
+                  $("#heads-2").css("display","block");
+                  $("#heads-3").css("display","none");
+                  $("#heads-1").css("display","none");
+ 
+              }else{
+                $("#carr-3").css("display","block");
+                $("#carr-2").css("display","none");
+                $("#carr-1").css("display","none");
+                 
+                  $("#heads-3").css("display","block");
+                  $("#heads-2").css("display","none");
+                  $("#heads-1").css("display","none");
+ 
+             }
+                           
+            });
 
         });
     </script>
