@@ -42,7 +42,7 @@ img{
 
 .head-1{
 	position: absolute;
-	top: 40vh;
+	top: 30vh;
 	left: 1vw;
 	right: 1vw;
 	text-align: center;
@@ -51,6 +51,8 @@ img{
 .arrow img{
 	height: 10vh;
 	width: 10vh;
+
+	
 }
 
 .head-2{
@@ -99,7 +101,17 @@ footer{
 	height: 5vw;
 	width: 5vw;
 }
+h1{
+	font-size: 80px;
+    text-shadow: 5px 5px #000;
 
+}
+/*@media only screen and (min-width: 1200px) {
+h1{
+	font-size: 100px;
+}
+
+	}*/
 @media only screen and (max-width: 550px) {
     .head-font{
     	font-size: 20px !important;
