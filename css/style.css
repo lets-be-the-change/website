@@ -101,10 +101,16 @@ footer{
 }
 
 @media only screen and (max-width: 550px) {
-  /*  .home-heads{
-    	font-size: 10px !important;
+    .head-font{
+    	font-size: 20px !important;
     }
-*/
+	.head-font4{
+    	font-size: 11px !important;
+    }
+	.head-font5{
+    	font-size: 12px !important;
+    }
+
     img{
     	height:50vh;
     }
