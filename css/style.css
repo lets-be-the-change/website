@@ -106,12 +106,6 @@ h1{
     text-shadow: 5px 5px #000;
 
 }
-/*@media only screen and (min-width: 1200px) {
-h1{
-	font-size: 100px;
-}
-
-	}*/
 @media only screen and (max-width: 550px) {
     .head-font{
     	font-size: 20px !important;
@@ -127,6 +121,11 @@ h1{
     	height:50vh;
     }
 
+h1{
+	
+    text-shadow: 2px 2px #000;
+
+}
 
 .head-1{
 	position: absolute;
