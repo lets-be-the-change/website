@@ -15,12 +15,12 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
 
-    
+
     <link href="~/Content/skeleton.css" rel="stylesheet" />
     <link href="~/Content/normalize.css" rel="stylesheet" />
     <link href="~/Content/style.css" rel="stylesheet" />
 
-    <link href="~/Content/~/Content/~/Content/Images/Logoo.png" rel="icon" type="image/png">
+    <link href="~/Content/Images/Logoo.png" rel="icon" type="image/png">
 
     <!-- Scripts -->
 
@@ -43,75 +43,95 @@
 
 
     <style type="text/css">
+        body {
+            background-color: #101010;
+        }
 
-            body{
-                background-color:#101010;
-            }
-            h4{
-              opacity: 0.7;
-            }
-            .row{
-              padding-top: 80px;
-              margin: auto;
-            }
-            h1{
-                text-align: center;
-                color: white;
-                font-size: 50px;
-                font-family: sans-serif;
-            }
-            p,li{
-                color: white;
-                font-size: 21px;
-                font-family: Raleway;
-                text-align: justify;
-            }
-            body {
-        background-image: url("~/Content/Images/background.jpg");
-        background-repeat: no-repeat;
-        -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+        h4 {
+            opacity: 0.7;
+        }
+
+        .row {
+            padding-top: 80px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+        p, .li {
+            color: white;
+            font-size: 21px;
+            font-family: Raleway;
+            text-align: justify;
+        }
+
+        body {
+            background-image: url("/Content/Images/background.jpg");
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        @@media screen and (max-width: 500px) {
+            .row {
+                padding-top: 20px;
             }
 
-            @@media screen and (max-width: 500px)
+            h1 {
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+
+        @@media screen and (max-width:768px)
             {
-                .row{
-                    padding-top: 20px;
-                }
-                h1{
-                    font-size: 12px;
-                }
-                p{
-                    font-size: 10px;
-                }
+                .resimg{
+                    height: 50% !important;
+                    width:50% !important;
 
+                }
+            }
 
-
+       @@media screen and (max-width: 500px)
+            {
+            	.row{
+            		padding-top: 30px;
+            	}
+            	h1{
+            		font-size: 30px;
+            	}
+            	p{
+            		font-size: 19px;
+            	}
             }
             @@media screen and (min-width: 501px) and (max-width: 1000px)
             {
-                .row{
-                    padding-top: 30px;
-                }
-                .hide{
-                    display: none;
-                }
+            	.row{
+            		padding-top: 30px;
+            	}
             }
-            @@media screen and (min-width: 1001px)
+           @@media screen and (min-width: 1001px)
             {
-                .row{
-                    padding-top: 80px;
-                }
+            	.row{
+            		padding-top: 80px;
+            	}
             }
            @@media screen and (min-width: 1001px) and (max-width: 1300px)
             {
-                .row{
-                    padding-top: 60px;
-                }
+            	.row{
+            		padding-top: 50px;
+            	}
             }
-
     </style>
 </head>
 <body>
@@ -134,9 +154,9 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <!-- normal menu items -->
-                    <li><a href="Home/Index">Home</a></li>
-                    <li><a href="Home/Gallery">Gallery</a></li>
-                    <li><a class="active" href="Home/AboutUs">About</a></li>
+                    <li><a href="Index">Home</a></li>
+                    <li><a href="Gallery">Gallery</a></li>
+                    <li><a class="active" href="About">About</a></li>
                     <li><a href="#">Join Us</a></li>
                     <li><a href="#">Donate</a></li>
                     <li><a href="#">Events</a></li>
@@ -147,7 +167,7 @@
     <div class="container">
         <div class="row"></div>
         <div class="row"></div>
-
+        <div class="row"></div>
         <div class="row">
             <h1>Who Are We?</h1>
         </div>
@@ -158,103 +178,99 @@
 
 
         </div>
-    </div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
 
 
-    <div class="row">
-        <h1>Our Vision</h1>
 
-        <div class="col-md-12">
-            <p style="text-align:center;">"We are the change people have been waiting for." </p>
+        <div class="row">
+            <h1>Our Vision</h1>
+
+            <div class="col-md-12">
+                <p style="text-align:center;">"We are the change people have been waiting for." </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <h1>Our Mission</h1>
+
+            <div class="col-md-12">
+                <p style="text-align:center;">"To make our society a happier and better place by being the change that is needed" </p>
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <h1>Our Mission</h1>
-
-        <div class="col-md-12">
-            <p style="text-align:center;">"To make our society a happier and better place by being the change that is needed" </p>
-        </div>
-    </div>
-
     <div class="row">
         <h1>What Do We Do?</h1>
-        <br><br>
-        <div class="col-md-9">
+
+        <div class="col-md-12 ">
             <ul>
-                <li>We work with the citizens of Bangalore to beautify the city.</li>
-                <li>We coordinate with BBMP officials to clean up places and beautify the place by painting and installing benches. We call this as spot-fixing.</li>
-                <li>We have taken up the initiative to tie-up with Precious Paws Foundation (PPF) and organize fund raising events for injured stray dogs, pet adoption (stray, homeless pups).</li>
-                <li>We have tied up with a team named “Say Trees” who aim at propagating tree plantations and beautify them with paintings.</li>
-                <li>We also give awareness talks on Radio Active (90.4) FM on how to live and let animals also live a happy life in this society.</li>
-                <li>We have started educating the society about waste management and environmental preservation through extensive door-to-door awareness programmes, short movies and clips.</li>
-                <li>We also have a number of videos on our YouTube channel demonstrating simple steps to keep your surroundings clean, various segregation techniques, and also have videos about traffic rules, common traffic conventions that people should follow, chain-snatching etc.</li>
-                <li>We conduct eco-friendly Ganapathy making workshops during the festival season.</li>
-                <li>We also tie-up with various organizations with similar goals to make Namma Bengaluru a beautiful city and are open to any form of collaboration with any organisation who have similar goals and we always focus on the work.</li>
+                <li class="li">We work with the citizens of Bangalore to beautify the city.</li>
+                <li class="li">We coordinate with BBMP officials to clean up places and beautify the place by painting and installing benches. We call this as spot-fixing.</li>
+                <li class="li">We have taken up the initiative to tie-up with Precious Paws Foundation (PPF) and organize fund raising events for injured stray dogs, pet adoption (stray, homeless pups).</li>
+                <li class="li">We have tied up with a team named “Say Trees” who aim at propagating tree plantations and beautify them with paintings.</li>
+                <li class="li">We also give awareness talks on Radio Active (90.4) FM on how to live and let animals also live a happy life in this society.</li>
+                <li class="li">We have started educating the society about waste management and environmental preservation through extensive door-to-door awareness programmes, short movies and clips.</li>
+                <li class="li">We also have a number of videos on our YouTube channel demonstrating simple steps to keep your surroundings clean, various segregation techniques, and also have videos about traffic rules, common traffic conventions that people should follow, chain-snatching etc.</li>
+                <li class="li">We conduct eco-friendly Ganapathy making workshops during the festival season.</li>
+                <li class="li">We also tie-up with various organizations with similar goals to make Namma Bengaluru a beautiful city and are open to any form of collaboration with any organisation who have similar goals and we always focus on the work.</li>
             </ul>
         </div>
-        <img src="~/Content/Images/cartoon.png" class="col-md-3" class="hide" style="width:300px;height:400px;">
     </div>
 
     <div class="row">
-        <img src="~/Content/Images/bus.jpg" class="col-md-4" class="hide" style="width:400px;height:300px;">
-
         <h1>Majestic Bus Stand</h1>
-
-        <div class="col-md-8">
+        <img class="col-md-2 col-sm-2 col-xs-12 resimg img-responsive" align="center" src="/Content/Images/bus.jpg">
+        <div class="col-md-8 col-sm-8 col-xs-12">
             <p style="text-align:justify;">We are very proud to have organised one of the biggest cleanliness drives that our city has ever witnessed. On the 2nd of October 2016, we gathered over 400 volunteers to completely transform the Majestic Bus Stand at the heart of the city. From the break of dawn, volunteers worked throughout the day to achieve our goal. We were supported by a lot of eminent people in this successful endeavour. This has been our biggest event so far. </p>
         </div>
     </div>
+
+    <div class="row">
+        <h1>Awards & Achievements</h1>
+
+        <div class="col-md-12">
+            <ul>
+                <li class="li">We have received "Yuva Chetana Award ", honoured by the Youth For Seva (YFS). </li>
+                <li class="li">Our initiative was appreciated and recognized by Uttarahalli BBMP officials, the Corporator and "Sneha Sangha Sports Club"</li>
+                <li class="li">We were the finalist of Namma Bengaluru Awards 2015</li>
+                <li class="li">We won the Namma Bengaluru Rising Star of the Year Award in 2016</li>
+                <li class="li">Our initiative has been widely appreciated by Radio Mirchi 98.3 FM, who have invited us as their guests for their primetime weekend show. The RJs also attend our events with active participation.</li>
+                <li class="li">Our "Cleanathon" events are regularly published in Bangalore Mirror, Deccan Herald, Vijaya Karnataka, Indian Express and many other leading newspapers.</li>
+                <li class="li">We are also invited by various media channels like TV9, DD Chandana, Raj News, Suvarna News etc., to give our expert opinions about various environmental issues and to answer the viewers’ questions.</li>
+
+            </ul>
+        </div>
+    </div>
     <div class="container">
-        <div class="row">
-            <h1>Awards & Achievements</h1>
+        <div class="container">
+            <div class="row">
+                <h1>Our Team</h1>
+                <img class="ui large image  " src="https://5jivda.dm2301.livefilestore.com/y4mL3TVb0Koo_GRkbbOhArkuRPP6SToGwKeoo-u_3Pss2vhxosxsBStvVXK2tUuOoPb4YA8K1pU05kb9g8jQKq5nunXwZUGQGtz8AH5MUVqrHzMFHMb7tRbBX8x81C3IPEZ-gjyTC4yIMAcbThdxHuy7P4N9BPKI9FF-M4l67JSyiHn5T07SxnRDVwpPcH-6kbuwEER7PYaT-bpG8_XWY5w5A?width=3373&height=2942&cropmode=none" width="3373" height="2942" />
 
-            <div class="col-md-12">
-                <ul>
-                    <li>We have received "Yuva Chetana Award ", honoured by the Youth For Seva (YFS). </li>
-                    <li>Our initiative was appreciated and recognized by Uttarahalli BBMP officials, the Corporator and "Sneha Sangha Sports Club"</li>
-                    <li>We were the finalist of Namma Bengaluru Awards 2015</li>
-                    <li>We won the Namma Bengaluru Rising Star of the Year Award in 2016</li>
-                    <li>Our initiative has been widely appreciated by Radio Mirchi 98.3 FM, who have invited us as their guests for their primetime weekend show. The RJs also attend our events with active participation.</li>
-                    <li>Our "Cleanathon" events are regularly published in Bangalore Mirror, Deccan Herald, Vijaya Karnataka, Indian Express and many other leading newspapers.</li>
-                    <li>We are also invited by various media channels like TV9, DD Chandana, Raj News, Suvarna News etc., to give our expert opinions about various environmental issues and to answer the viewers’ questions.</li>
-
-                </ul>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <h1>Our Team</h1>
-        <div class="col-md-12">
-            <img class="ui large image " align="center" src="https://5jivda.dm2301.livefilestore.com/y4mL3TVb0Koo_GRkbbOhArkuRPP6SToGwKeoo-u_3Pss2vhxosxsBStvVXK2tUuOoPb4YA8K1pU05kb9g8jQKq5nunXwZUGQGtz8AH5MUVqrHzMFHMb7tRbBX8x81C3IPEZ-gjyTC4yIMAcbThdxHuy7P4N9BPKI9FF-M4l67JSyiHn5T07SxnRDVwpPcH-6kbuwEER7PYaT-bpG8_XWY5w5A?width=3373&height=2942&cropmode=none" width="3373" height="2942" />
-        </div>
-    </div>
-
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-                    <a href="#"><img src="~/Content/Images/Icons/Contact-phone.svg" alt="phone"></a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-                    <a href="#"><img src="~/Content/Images/Icons/Contact-email.svg" alt="email"></a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-                    <a href="#"><img src="~/Content/Images/Icons/Contact-facebook.svg" alt="facebook"></a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-                    <a href="#"><img src="~/Content/Images/Icons/Contact-instagram.svg" alt="instagram"></a>
-                </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                <a href="#"><img src="~/Content/Images/Icons/Contact-phone.svg" alt="phone"></a>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                <a href="#"><img src="~/Content/Images/Icons/Contact-email.svg" alt="email"></a>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                <a href="#"><img src="~/Content/Images/Icons/Contact-facebook.svg" alt="facebook"></a>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                <a href="#"><img src="~/Content/Images/Icons/Contact-instagram.svg" alt="instagram"></a>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
