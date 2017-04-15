@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Let's Be The Change</title>
-        
+
         <meta content="" name="description">
         <meta content="" name="author">
         <!-- Mobile Specific Metas
       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
-        
+
         <!-- CSS -->
         <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/normalize.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
         <!-- font -->
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-        
+
     </head>
     <body>
         <!-- navbar -->
@@ -152,7 +152,7 @@
     </body>
     <script>
       var i =0;
-        
+
         $(document).ready(function(){
             // alert('hi');
             $("#carr-1").css("display","block");
@@ -161,42 +161,41 @@
              $("heads-1").css("display","block");
             $("#heads-2").css("display","none");
             $("#heads-3").css("display","none");
- 
+
             $('.arrow-btn').click(function(){
             i++;
             i=i%3;
-      
- 
+
+
             if(i==0){
                 $("#carr-1").css("display","block");
                 $("#carr-2").css("display","none");
                 $("#carr-3").css("display","none");
-                 
+
                   $("#heads-1").css("display","block");
                   $("#heads-2").css("display","none");
                  $("#heads-3").css("display","none");
- 
+
                     }
             else if(i==1){
                 $("#carr-2").css("display","block");
                 $("#carr-1").css("display","none");
                 $("#carr-3").css("display","none");
-                
+
                   $("#heads-2").css("display","block");
                   $("#heads-3").css("display","none");
                   $("#heads-1").css("display","none");
- 
+
               }else{
                 $("#carr-3").css("display","block");
                 $("#carr-2").css("display","none");
                 $("#carr-1").css("display","none");
-                 
+
                   $("#heads-3").css("display","block");
                   $("#heads-2").css("display","none");
                   $("#heads-1").css("display","none");
- 
+
              }
-                           
             });
 
         });
