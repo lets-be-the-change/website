@@ -21,5 +21,9 @@ namespace LbtcWebsite.Models
 
         [Display(Name = "Event Image")]
         public byte[] Image { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime EventDate { get; set; }
     }
 }
