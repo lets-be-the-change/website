@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using LbtcWebsite.DAL;
 using LbtcWebsite.Models;
+using System.IO;
 
 namespace LbtcWebsite.Controllers
 {
@@ -47,11 +48,18 @@ namespace LbtcWebsite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,EventName,EventDescription")] Event @event)
+        public ActionResult Create(HttpPostedFileBase ImageFile, [Bind(Include = "ID,EventName,EventDescription")] Event @event)
         {
             if (ModelState.IsValid)
             {
                 @event.ID = Guid.NewGuid();
+
+                byte[] imageBytes = null;
+                BinaryReader reader = new BinaryReader(ImageFile.InputStream);
+                imageBytes = reader.ReadBytes((int)ImageFile.ContentLength);
+
+                @event.Image = imageBytes;
+
                 db.Events.Add(@event);
                 db.SaveChanges();
                 return RedirectToAction("Index");
