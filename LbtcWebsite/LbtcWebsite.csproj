@@ -240,14 +240,6 @@
     <Content Include="Content\Images\down-arrow.png" />
     <Content Include="Content\Images\gallery.jpg" />
     <Content Include="Content\Images\hand.jpg" />
-    <Content Include="Content\Images\Icons\About-book.svg" />
-    <Content Include="Content\Images\Icons\Arrow.svg" />
-    <Content Include="Content\Images\Icons\Contact-email.svg" />
-    <Content Include="Content\Images\Icons\Contact-facebook.svg" />
-    <Content Include="Content\Images\Icons\Contact-instagram.svg" />
-    <Content Include="Content\Images\Icons\Contact-phone.svg" />
-    <Content Include="Content\Images\Icons\Gallery.svg" />
-    <Content Include="Content\Images\Icons\Joinus.svg" />
     <Content Include="Content\Images\lbtc.jpg" />
     <Content Include="Content\Images\logo.jpg" />
     <Content Include="Content\Images\Logoo.png" />
@@ -334,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Icons\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
