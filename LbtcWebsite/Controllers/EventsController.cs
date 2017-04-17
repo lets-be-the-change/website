@@ -48,7 +48,7 @@ namespace LbtcWebsite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(HttpPostedFileBase ImageFile, [Bind(Include = "ID,EventName,EventDescription")] Event @event)
+        public ActionResult Create(HttpPostedFileBase ImageFile, [Bind(Include = "ID,EventName,EventDescription,EventDate")] Event @event)
         {
             if (ModelState.IsValid)
             {
