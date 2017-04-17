@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LbtcWebsite.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace LbtcWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        private LbtcContext db = new LbtcContext();
+
         public ActionResult Index()
         {
             return View();
@@ -15,6 +18,7 @@ namespace LbtcWebsite.Controllers
 
         public ActionResult Gallery()
         {
+            ViewBag.Events = db.Events.ToList();
             return View();
         }
 

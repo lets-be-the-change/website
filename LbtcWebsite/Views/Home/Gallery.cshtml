@@ -88,6 +88,25 @@
     <div class="container">
         <div class="row">
             <div class="ui link cards">
+                @foreach (var item in (List<LbtcWebsite.Models.Event>)ViewBag.Events)
+                {
+                    <div class="card">
+                        <div class="image">
+                            <img src="/Events/GetImageFromDatabase/@item.ID" width="1024" height="683" />
+                        </div>
+                        <div class="content">
+                            <div class="header">@item.EventName</div>
+                            <div class="description">
+                                @item.EventDescription
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <span class="right floated">
+                                2nd Oct 2016
+                            </span>
+                        </div>
+                    </div>
+                }
                 <div class="card">
                     <div class="image">
                         <img src="https://gacogq.dm2301.livefilestore.com/y4m95XRBjUiaN5jTNDWKrpPCebA7m4H8gfd-vuv-escNAYtVA5KmKt8e2XRlOL4FdQwh5xpQ2cG6T_X6b20RtGy-_jmayqXTTmUNM1jXy7rPaG99D8yf7IQWdYCaP4MfVKP0KzWt85hSKTcKAX0j-CbzFFCpnQP7rLz5qL_SoWYqhBOwlZ_MmirztemhTzonFsXNV35-HQXcdlH4syhm1rPKQ?width=1024&height=683&cropmode=none" width="1024" height="683" />

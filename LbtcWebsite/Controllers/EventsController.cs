@@ -125,6 +125,13 @@ namespace LbtcWebsite.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult GetImageFromDatabase(Guid id)
+        {
+            byte[] image = db.Events.Find(id).Image;
+            return File(image, "image/jpg");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
