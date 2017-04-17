@@ -12,5 +12,7 @@ namespace LbtcWebsite.Models
         public string EventName { get; set; }
 
         public string EventDescription { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }
