@@ -54,15 +54,15 @@ namespace LbtcWebsite
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "122099995044851",
+               appSecret: "ab74a1f0e751c82ab1388bb2a12b246f");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "258549705532-d9ittq7dtuv2tahoje2oqfgubur8rnlf.apps.googleusercontent.com",
+                ClientSecret = "rHkXHO6bPw9FkmbBWIVFZlUT"
+            });
         }
     }
 }

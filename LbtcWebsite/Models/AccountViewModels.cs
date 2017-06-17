@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace LbtcWebsite.Models
@@ -8,6 +9,27 @@ namespace LbtcWebsite.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Range(1000000000, 9999999999, ErrorMessage = "Please enter a valid phone number")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string BloodGroup { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime DateOfBirth { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string Address { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string HowDidYouFindOut { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -79,6 +101,27 @@ namespace LbtcWebsite.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Range(1000000000, 9999999999, ErrorMessage = "Please enter a valid phone number")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string BloodGroup { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime DateOfBirth { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string Address { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string HowDidYouFindOut { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using LbtcWebsite.Models;
+using System.Net.Mail;
+using System.Net;
 
 namespace LbtcWebsite
 {
@@ -18,7 +20,25 @@ namespace LbtcWebsite
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
+            var email = new MailMessage(new MailAddress("admin@letsbethechange.in "),
+                new MailAddress(message.Destination));
+            email.Subject = message.Subject;
+            email.Body = message.Body;
+            email.IsBodyHtml = true;
+            using (var smtp = new SmtpClient())
+            {
+                var credential = new NetworkCredential
+                {
+                    UserName = "admin@letsbethechange.in",
+                    Password = "Adithya_123"
+                };
+                smtp.Credentials = credential;
+                smtp.Host = "smtpout.secureserver.net";
+                smtp.Port = 3535;
+                smtp.EnableSsl = false;
+                smtp.Timeout = 10000;
+                smtp.Send(email);
+            }
             return Task.FromResult(0);
         }
     }
@@ -40,7 +60,7 @@ namespace LbtcWebsite
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
@@ -81,7 +101,7 @@ namespace LbtcWebsite
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;

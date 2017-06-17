@@ -36,8 +36,8 @@ namespace LbtcWebsite
 
                 var user = new ApplicationUser()
                 {
-                    UserName = "admin@lbtc.com",
-                    Email = "admin@lbtc.com"
+                    UserName = "admin@letsbethechange.in",
+                    Email = "admin@letsbethechange.in"
                 };
                 string userPWD = "P@ssw0rd_123";
 

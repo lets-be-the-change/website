@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using LbtcWebsite.Models;
+using reCAPTCHA.MVC;
+using System.Collections.Generic;
 
 namespace LbtcWebsite.Controllers
 {
@@ -22,7 +24,7 @@ namespace LbtcWebsite.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +36,9 @@ namespace LbtcWebsite.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -66,16 +68,17 @@ namespace LbtcWebsite.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        [CaptchaValidator(ErrorMessage = "Please complete the reCAPTCHA")]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl, bool captchaValid)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !captchaValid)
             {
                 return View(model);
             }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -120,7 +123,7 @@ namespace LbtcWebsite.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -139,6 +142,7 @@ namespace LbtcWebsite.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.BloodGroupList = GetBloodGroups();
             return View();
         }
 
@@ -147,21 +151,53 @@ namespace LbtcWebsite.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        [CaptchaValidator(ErrorMessage = "Please complete the reCAPTCHA")]
+        public async Task<ActionResult> Register(RegisterViewModel model, bool captchaValid)
         {
-            if (ModelState.IsValid)
+            ViewBag.BloodGroupList = GetBloodGroups();
+
+            if (model.DateOfBirth >= DateTime.Now)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                ModelState.AddModelError("DateOfBirth", "Invalid date of birth");
+                return View();
+            }
+
+            var today = DateTime.Today;
+            var age = today.Year - model.DateOfBirth.Year;
+            if (model.DateOfBirth > today.AddYears(-age))
+            {
+                age--;
+            }
+            if (age < 13)
+            {
+                ModelState.AddModelError("DateOfBirth", "You must be aleast 13 years");
+                return View();
+            }
+
+            if (ModelState.IsValid && captchaValid)
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    BloodGroup = model.BloodGroup,
+                    Address = model.Address,
+                    PhoneNumber = model.PhoneNumber,
+                    DateOfBirth = model.DateOfBirth,
+                    HowDidYouFindOut = model.HowDidYouFindOut,
+                    Name = model.Name
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -211,10 +247,10 @@ namespace LbtcWebsite.Controllers
 
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -322,6 +358,8 @@ namespace LbtcWebsite.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
+            ViewBag.BloodGroupList = GetBloodGroups();
+
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
@@ -354,6 +392,8 @@ namespace LbtcWebsite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
+            ViewBag.BloodGroupList = GetBloodGroups();
+
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Manage");
@@ -479,6 +519,52 @@ namespace LbtcWebsite.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+        }
+
+        private List<SelectListItem> GetBloodGroups()
+        {
+            List<SelectListItem> bloodGroups = new List<SelectListItem>();
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "O-",
+                Value = "O-"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "O+",
+                Value = "O+"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "A-",
+                Value = "A-"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "A+",
+                Value = "A+"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "B-",
+                Value = "B-"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "B+",
+                Value = "B+"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "AB-",
+                Value = "AB-"
+            });
+            bloodGroups.Add(new SelectListItem
+            {
+                Text = "AB+",
+                Value = "AB+"
+            });
+            return bloodGroups;
         }
         #endregion
     }
