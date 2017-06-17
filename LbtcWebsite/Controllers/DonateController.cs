@@ -10,7 +10,6 @@ using System.Web.Mvc;
 
 namespace LbtcWebsite.Controllers
 {
-    [Authorize]
     public class DonateController : Controller
     {
         // GET: Donate
@@ -18,15 +17,20 @@ namespace LbtcWebsite.Controllers
         {
             var user = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>().FindByNameAsync(User.Identity.Name).Result;
 
-            DonationAmountViewModel viewModel = new DonationAmountViewModel
+            if (user != null)
             {
-                Amount = 100,
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
-                Name = user.Name
-            };
+                DonationAmountViewModel viewModel = new DonationAmountViewModel
+                {
+                    Amount = 100,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    Name = user.Name
+                };
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+
+            return View();
         }
 
         [HttpPost]
