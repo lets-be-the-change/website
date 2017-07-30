@@ -48,8 +48,9 @@
     <Reference Include="hbehr.recaptcha, Version=1.5.0.35423, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReCaptcha-AspNet.1.5.0\lib\net452\hbehr.recaptcha.dll</HintPath>
     </Reference>
-    <Reference Include="InstamojoAPI">
-      <HintPath>..\..\..\..\..\Downloads\instamojo-csharp-1.0.3\instamojo-csharp-1.0.3\InstamojoAPI\bin\Release\InstamojoAPI.dll</HintPath>
+    <Reference Include="InstamojoAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\InstamojoAPI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -303,6 +304,7 @@
     <Content Include="Content\Images\vid.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="DLLs\InstamojoAPI.dll" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
