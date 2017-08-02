@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@{
     ViewBag.Title = "Contact";
     Layout = null;
 }
@@ -38,8 +39,6 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
     <script src="~/Scripts/script.js"></script>
 
 
@@ -125,6 +124,89 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container-fluid">
+
+
+
+            <!-- logo -->
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" onclick='$("#mainNavBar").toggleClass("collapse")' data-target="#mainNavBar">
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                </button>
+
+                <a href="#" class="navbar-brand"><span class="lbtc-logo"><img src="~/Content/Images/logoo.png" alt="lbtc logo"></span></a>
+
+            </div>
+
+
+
+            <!--Menu Items -->
+
+            <div class="collapse navbar-collapse" id="mainNavBar" style="overflow-x:hidden !important;">
+
+                <ul class="nav navbar-nav navbar-right">
+
+
+
+                    <!-- normal menu items -->
+
+                    <li><a class="active" href="Home/Index">Home</a></li>
+
+                    <li><a href="/Home/Gallery">Gallery</a></li>
+
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/Home/ContactUs">Contact Us</a></li>
+
+                    <li><a href="https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form">Join Us</a></li>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a href="/Admin/GetDonations">View Donate</a></li>
+                        <li><a href="/Admin/ViewUsers">View Users</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Donate/EnterAmount">Donate</a></li>
+                    }
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                            </ul>
+                        }
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Log in/Register", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        </ul>
+                    }
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-xs-10 col-md-offset-2 col-xs-offset-2" id="heading">
