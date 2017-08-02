@@ -33,5 +33,10 @@ namespace LbtcWebsite.Controllers
 
             return View();
         }
+
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
     }
 }
