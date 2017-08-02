@@ -1,435 +1,220 @@
 ﻿@using Microsoft.AspNet.Identity
 @{
-    ViewBag.Title = "Home Page";
-    Layout = null;
+ViewBag.Title = "Home Page";
+Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
-    <meta charset="utf-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Let's Be The Change</title>
-
-
-
-    <meta content="" name="description">
-
-    <meta content="" name="author">
-
-    <!-- Mobile Specific Metas
-
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
-
-
-
-    <!-- CSS -->
-
-    <link href="~/Content/skeleton.css" rel="stylesheet" />
-    <link href="~/Content/normalize.css" rel="stylesheet" />
-    <link href="~/Content/style.css" rel="stylesheet" />
-
-    <link href="~/Content/Images/Logoo.png" rel="icon" type="image/png">
-
-    <!-- Scripts -->
-
-    <script src="~/Scripts/jquery-3.1.1.js"></script>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-    <script src="~/Scripts/script.js"></script>
-
-    <!-- font -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-
-
-</head>
-
-<body>
-
-    <!-- navbar -->
-    <a class="youlink" href="https://youtu.be/YJ7dPQgiBYg"><img class="vidimg" src="~/Content/Images/vid.svg" alt="Video"></a>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-
-        <div class="container-fluid">
-
-
-
-            <!-- logo -->
-
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" onclick='$("#mainNavBar").toggleClass("collapse")' data-target="#mainNavBar">
-
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Let's Be The Change</title>
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <!-- Mobile Specific Metas
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
+        <!-- CSS -->
+        <link href="~/Content/skeleton.css" rel="stylesheet" />
+        <link href="~/Content/normalize.css" rel="stylesheet" />
+        
+        <link href="~/Content/Images/Logoo.png" rel="icon" type="image/png">
+        <!-- Scripts -->
+        <script src="~/Scripts/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="~/Scripts/script.js"></script>
+        <link href="~/Content/semantic.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <!-- font -->
+        <link href="~/Content/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    </head>
+    <body>
+        <!-- navbar -->
+        <a class="youlink" href="https://youtu.be/YJ7dPQgiBYg"><img class="vidimg" src="~/Content/Images/vid.svg" alt="Video"></a>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- logo -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" onclick='$("#mainNavBar").toggleClass("collapse")' data-target="#mainNavBar">
                     <span class="icon-bar"></span>
-
                     <span class="icon-bar"></span>
-
                     <span class="icon-bar"></span>
-
-                </button>
-
-                <a href="#" class="navbar-brand"><span class="lbtc-logo"><img src="~/Content/Images/logoo.png" alt="lbtc logo"></span></a>
-
-            </div>
-
-
-
-            <!--Menu Items -->
-
-            <div class="collapse navbar-collapse" id="mainNavBar" style="overflow-x:hidden !important;">
-
-                <ul class="nav navbar-nav navbar-right">
-
-
-
-                    <!-- normal menu items -->
-
-                    <li><a class="active" href="Home/Index">Home</a></li>
-
-                    <li><a href="/Home/Gallery">Gallery</a></li>
-
-                    <li><a href="/Home/About">About</a></li>
-                    <li><a href="/Home/ContactUs">Contact Us</a></li>
-
-                    <li><a href="https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form">Join Us</a></li>
-
-                    @if (User.IsInRole("Admin"))
-                    {
+                    </button>
+                    <a href="#" class="navbar-brand"><span class="lbtc-logo"><img src="~/Content/Images/logoo.png" alt="lbtc logo"></span></a>
+                </div>
+                <!--Menu Items -->
+                <div class="collapse navbar-collapse" id="mainNavBar" style="overflow-x:hidden !important;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- normal menu items -->
+                        <li><a class="active" href="Home/Index">Home</a></li>
+                        <li><a href="/Home/Gallery">Gallery</a></li>
+                        <li><a href="/Home/About">About</a></li>
+                        <li><a href="/Home/ContactUs">Contact Us</a></li>
+                        <li><a href="https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form">Join Us</a></li>
+                        @if (User.IsInRole("Admin"))
+                        {
                         <li><a href="/Admin/GetDonations">View Donate</a></li>
                         <li><a href="/Admin/ViewUsers">View Users</a></li>
-                    }
-                    else
-                    {
+                        }
+                        else
+                        {
                         <li><a href="/Donate/EnterAmount">Donate</a></li>
-                    }
-
-                    @if (Request.IsAuthenticated)
-                    {
+                        }
+                        @if (Request.IsAuthenticated)
+                        {
                         using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                         {
-                            @Html.AntiForgeryToken()
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                </li>
-                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                            </ul>
+                        @Html.AntiForgeryToken()
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                            </li>
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                        </ul>
                         }
-                    }
-                    else
-                    {
+                        }
+                        else
+                        {
                         <ul class="nav navbar-nav navbar-right">
                             <li>@Html.ActionLink("Log in/Register", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                         </ul>
-                    }
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-   
-
-    <!-- content -->
-
-    <div class="container-fluid">
-       
-        <div class="content">
-
-            <img id="carr-1" class="home-img carr-img" src="https://io43xq.dm2301.livefilestore.com/y4m--FE8_y0awsE5ZPNJN8frqSjL9UwR6dU5zj-4vHu_1BdlI9NPOVHihdUuPCfEK3KuboemBzwgLjxRTxDNZBQf5ty5FrzuzP5rE03rv78UQon9kJAr8X4vIUDWViqXQufEdPB_KTEcR48sw4ain2zpN1M4-oiUG-Wb5A4rkVjlFhdI5zvYUo03Z0iMxOlZg4_u2MK46b_U7EyP5onxemTUA?width=1729&height=1162&cropmode=none" alt="lbtc">
-
-            <img id="carr-2" class="home-img carr-img" src="https://io4iiw.dm2301.livefilestore.com/y4mAhW0HW7e5xPcD8OUMZPN_tRXVApyY9EroHQwPwEvwv8WqFlHlSEZTgflkxQGJsr6lc7mL6OgrR0514sCvuP9Fy6FYKsM2t3W6wcf77Vba01NKZDQ9DJyZJExJPYm9vP3eZik6AZRQWquvdc0PxI6cW7nww3ZeQSy5QARhNXXg1mvLALZSGb-zVZDtqcZJsgSQLEABu-vAA4xFyWNcUaoXQ?width=2200&height=1170&cropmode=none" alt="lbtc">
-
-            <img id="carr-3" class="home-img carr-img" src="https://io7soq.dm2301.livefilestore.com/y4mLYex3XAIQlIX6ZW7qFWYhCn-Zj0sdo6C723k4Jxqg1Udz0GSYEO8umIC0wB6m4Na6TClJagRPljV7NhXEjPW6UIP9ZSud8gbabIGGpQ15JgslZmn6Mk1g_ruNad-HEvKi44Xp7SgrKXWPMZKroGLjXBAZcjDDiekeZlKtTr11-JGPgIa-qVqDta6H1qg1Jq8jNwhxBw3IGs1WycGM91z2A?width=5184&height=3456&cropmode=none" alt="lbtc">
-
-            <span class="home-heads head-1" id="heads-1">
-
-                <h1 class="head-font">Help Make Bengaluru</h1>
-
-                <h1 class="head-font">Beautiful!</h1>
-
-                <br><br>
-
-                <div class="arrow">
-
-                    <a class="arrow-btn" href="#"><img src="~/Content/Images/down-arrow.png" alt="down arrow"></a>
-
+                        }
+                    </ul>
                 </div>
-
-            </span>
-
-            <span class="home-heads head-1" id="heads-2">
-
-                <h1 class="head-font">Donate</h1>
-
-                <h4 class="head-font4">Help us do what we do.</h4>
-
-                <a href="/Admin/GetDonations"><button type="button" class="btn btn-secondary"  onclick="window.location.href='/Admin/GetDonations'">Contribute Here</button></a>
-
-                <br><br><br>
-
-                <div class="arrow">
-
-                    <a class="arrow-btn" href="#"><img src="~/Content/Images/down-arrow.png" alt="down arrow"></a>
-
+            </div>
+        </nav>
+        
+        <!-- content -->
+        <div class="container-fluid">
+            
+            <div class="content">
+                <img id="carr-1" class="home-img carr-img" src="https://io43xq.dm2301.livefilestore.com/y4m--FE8_y0awsE5ZPNJN8frqSjL9UwR6dU5zj-4vHu_1BdlI9NPOVHihdUuPCfEK3KuboemBzwgLjxRTxDNZBQf5ty5FrzuzP5rE03rv78UQon9kJAr8X4vIUDWViqXQufEdPB_KTEcR48sw4ain2zpN1M4-oiUG-Wb5A4rkVjlFhdI5zvYUo03Z0iMxOlZg4_u2MK46b_U7EyP5onxemTUA?width=1729&height=1162&cropmode=none" alt="lbtc">
+                <img id="carr-2" class="home-img carr-img" src="https://io4iiw.dm2301.livefilestore.com/y4mAhW0HW7e5xPcD8OUMZPN_tRXVApyY9EroHQwPwEvwv8WqFlHlSEZTgflkxQGJsr6lc7mL6OgrR0514sCvuP9Fy6FYKsM2t3W6wcf77Vba01NKZDQ9DJyZJExJPYm9vP3eZik6AZRQWquvdc0PxI6cW7nww3ZeQSy5QARhNXXg1mvLALZSGb-zVZDtqcZJsgSQLEABu-vAA4xFyWNcUaoXQ?width=2200&height=1170&cropmode=none" alt="lbtc">
+                <img id="carr-3" class="home-img carr-img" src="https://io7soq.dm2301.livefilestore.com/y4mLYex3XAIQlIX6ZW7qFWYhCn-Zj0sdo6C723k4Jxqg1Udz0GSYEO8umIC0wB6m4Na6TClJagRPljV7NhXEjPW6UIP9ZSud8gbabIGGpQ15JgslZmn6Mk1g_ruNad-HEvKi44Xp7SgrKXWPMZKroGLjXBAZcjDDiekeZlKtTr11-JGPgIa-qVqDta6H1qg1Jq8jNwhxBw3IGs1WycGM91z2A?width=5184&height=3456&cropmode=none" alt="lbtc">
+                <span class="home-heads head-1" id="heads-1">
+                    <h1 class="head-font">Help Make Bengaluru</h1>
+                    <h1 class="head-font">Beautiful!</h1>
+                    <br><br>
+                    <div class="arrow">
+                        <a class="arrow-btn" href="#"><img src="~/Content/Images/down-arrow.png" alt="down arrow"></a>
+                    </div>
+                </span>
+                <span class="home-heads head-1" id="heads-2">
+                    <h1 class="head-font">Donate</h1>
+                    <h4 class="head-font4">Help us do what we do.</h4>
+                    <a href="/Admin/GetDonations"><button type="button" class="btn btn-secondary"  onclick="window.location.href='/Admin/GetDonations'">Contribute Here</button></a>
+                    <br><br><br>
+                    <div class="arrow">
+                        <a class="arrow-btn" href="#"><img src="~/Content/Images/down-arrow.png" alt="down arrow"></a>
+                    </div>
+                </span>
+                <span class="home-heads head-1" id="heads-3">
+                    <h1 class="head-font">Volunteer</h1>
+                    <h4 class="head-font4">Become one of the 500+</h4>
+                    <h4 class="head-font4">registered volunteers.</h4>
+                    <button type="button"  onclick="window.location.href='https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form'" class="btn btn-secondary">Register Here</button>
+                    <br><br>
+                    <div class="arrow">
+                        <a class="arrow-btn" href="#"><img src="~/Content/Images/down-arrow.png" alt="down arrow"></a>
+                    </div>
+                </span>
+            </div>
+            <div class="content" id="goto-gallery">
+                <img class="home-img " src="~/Content/Images/gallery.jpg" alt="gallery">
+                <span class="home-heads head-2">
+                    <div class="head-icon"><img src="~/Content/Images/Icons/Gallery.svg" alt="Gallery"></div>
+                    <br>
+                    <h1 class="head-font">Check out our</h1>
+                    <h1 class="head-font">gallery!</h1>
+                    <br>
+                    <button type="button" class="btn btn-secondary " onclick="window.location.href='/Home/Gallery'">VIEW HERE</button>
+                </span>
+            </div>
+            <div class="content">
+                <img class="home-img" src="https://io7l8g.dm2301.livefilestore.com/y4mPyOzm95ugkJkXfnmhAJ8xrescF2bKfr1HBZCW0f5apaYulH-6RNSoZJ2ZvHi_1_zlMh9IGbVlhJjh-NEVdFbvWUz0rSkgu_vLE1vEj5cm-nrCq_Km8fw6YfyMA83pk8xchsC_k64pq8UmYDqnYYVOYHCIL8MPIAI4xvBMRrHTIYzbpXvxTgot5VJJYFw3IGFKsq_bnuU8M7Ou6jNPh9qnw?width=5184&height=3456&cropmode=none" alt="lbtc">
+                <span class="home-heads head-3">
+                    <div class="head-icon"><img src="~/Content/Images/Icons/About-book.svg" alt="Book"></div>
+                    <br>
+                    <h1 class="head-font">Who are we?</h1>
+                    <h1 class="head-font">And what do we do?</h1>
+                    <br>
+                    <button type="button" class="btn btn-secondary " onclick="window.location.href='/Home/About'">FIND OUT HERE</button>
+                </span>
+            </div>
+            <div class="content">
+                <img class="home-img" src="https://i2oiag.dm2301.livefilestore.com/y4muXtGfZt8V0yB638cZ_AdVy-SgR38Q5cjNAW3uWZTnfRtks1xax2zZlOiDW2a7PnWZKKu6hMzQwsDyh1D-fAFfEyheLR-HPYscqm9AtG9h2n73vKouxnOYYdGfvIfFhO7i7HFPSi_630SmjwTiID7aJWuFgpfJ2Q94PiwYK0pXSmOrN3DJQ5ZZti_VTSc7XEdG-IEkiCXE3PrvPIXTO1A9w?width=540&height=360&cropmode=none" alt="hand">
+                <span class="home-heads head-4">
+                    <div class="head-icon"><img src="~/Content/Images/Icons/Joinus.svg" alt="Join us"></div>
+                    <br>
+                    <h1 class="head-font">Join us!</h1>
+                    <h5 class="head-font5">And be the change</h5>
+                    <h5 class="head-font5">your city deserves</h5>
+                    <br>
+                    <button type="button" class="btn btn-secondary " onclick="window.location.href='https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form'">FILL THE FORM HERE</button>
+                </span>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="#"><img src="~/Content/Images/Icons/Contact-phone.svg" alt="phone"></a>
                 </div>
-
-            </span>
-
-            <span class="home-heads head-1" id="heads-3">
-
-                <h1 class="head-font">Volunteer</h1>
-
-                <h4 class="head-font4">Become one of the 500+</h4>
-
-                <h4 class="head-font4">registered volunteers.</h4>
-
-                <button type="button"  onclick="window.location.href='https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form'" class="btn btn-secondary">Register Here</button>
-
-                <br><br>
-
-                <div class="arrow">
-
-                    <a class="arrow-btn" href="#"><img src="~/Content/Images/down-arrow.png" alt="down arrow"></a>
-
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="#"><img src="~/Content/Images/Icons/Contact-email.svg" alt="email"></a>
                 </div>
-
-            </span>
-
-        </div>
-
-        <div class="content" id="goto-gallery">
-            <img class="home-img " src="~/Content/Images/gallery.jpg" alt="gallery">
-
-            <span class="home-heads head-2">
-
-                <div class="head-icon"><img src="~/Content/Images/Icons/Gallery.svg" alt="Gallery"></div>
-
-                <br>
-
-                <h1 class="head-font">Check out our</h1>
-
-                <h1 class="head-font">gallery!</h1>
-
-                <br>
-
-                <button type="button" class="btn btn-secondary " onclick="window.location.href='/Home/Gallery'">VIEW HERE</button>
-
-            </span>
-
-        </div>
-
-
-
-        <div class="content">
-
-            <img class="home-img" src="https://io7l8g.dm2301.livefilestore.com/y4mPyOzm95ugkJkXfnmhAJ8xrescF2bKfr1HBZCW0f5apaYulH-6RNSoZJ2ZvHi_1_zlMh9IGbVlhJjh-NEVdFbvWUz0rSkgu_vLE1vEj5cm-nrCq_Km8fw6YfyMA83pk8xchsC_k64pq8UmYDqnYYVOYHCIL8MPIAI4xvBMRrHTIYzbpXvxTgot5VJJYFw3IGFKsq_bnuU8M7Ou6jNPh9qnw?width=5184&height=3456&cropmode=none" alt="lbtc">
-
-            <span class="home-heads head-3">
-
-                <div class="head-icon"><img src="~/Content/Images/Icons/About-book.svg" alt="Book"></div>
-
-                <br>
-
-                <h1 class="head-font">Who are we?</h1>
-
-                <h1 class="head-font">And what do we do?</h1>
-
-                <br>
-
-                <button type="button" class="btn btn-secondary " onclick="window.location.href='/Home/About'">FIND OUT HERE</button>
-
-            </span>
-
-        </div>
-
-
-
-        <div class="content">
-
-            <img class="home-img" src="https://i2oiag.dm2301.livefilestore.com/y4muXtGfZt8V0yB638cZ_AdVy-SgR38Q5cjNAW3uWZTnfRtks1xax2zZlOiDW2a7PnWZKKu6hMzQwsDyh1D-fAFfEyheLR-HPYscqm9AtG9h2n73vKouxnOYYdGfvIfFhO7i7HFPSi_630SmjwTiID7aJWuFgpfJ2Q94PiwYK0pXSmOrN3DJQ5ZZti_VTSc7XEdG-IEkiCXE3PrvPIXTO1A9w?width=540&height=360&cropmode=none" alt="hand">
-
-            <span class="home-heads head-4">
-
-                <div class="head-icon"><img src="~/Content/Images/Icons/Joinus.svg" alt="Join us"></div>
-
-                <br>
-
-                <h1 class="head-font">Join us!</h1>
-
-                <h5 class="head-font5">And be the change</h5>
-
-                <h5 class="head-font5">your city deserves</h5>
-
-                <br>
-
-                <button type="button" class="btn btn-secondary " onclick="window.location.href='https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form'">FILL THE FORM HERE</button>
-
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- footer -->
-
-    <footer>
-
-        <div class="row">
-
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-                <a href="#"><img src="~/Content/Images/Icons/Contact-phone.svg" alt="phone"></a>
-
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="https://www.facebook.com/LBTCIndia/"><img src="~/Content/Images/Icons/Contact-facebook.svg" alt="facebook"></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="https://www.instagram.com/lbtcindia/"><img src="~/Content/Images/Icons/Contact-instagram.svg" alt="instagram"></a>
+                </div>
             </div>
-
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-                <a href="#"><img src="~/Content/Images/Icons/Contact-email.svg" alt="email"></a>
-
+            <div class="row">
+                <a href="https://www.facebook.com/The-Rassm-676196475915110/?notif_t=page_fan&notif_id=1497624182452932"><h3>Powered By Team RaSSm</h3></a>
             </div>
-
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-                <a href="https://www.facebook.com/LBTCIndia/"><img src="~/Content/Images/Icons/Contact-facebook.svg" alt="facebook"></a>
-
-            </div>
-
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-                <a href="https://www.instagram.com/lbtcindia/"><img src="~/Content/Images/Icons/Contact-instagram.svg" alt="instagram"></a>
-
-            </div>
-
-        </div>
-        <div class="row">
-            <a href="https://www.facebook.com/The-Rassm-676196475915110/?notif_t=page_fan&notif_id=1497624182452932"><h3>Powered By Team RaSSm</h3></a>
-        </div>
-
-    </footer>
-
-
-
-</body>
-
-<script>
-
-      var i =0;
-
-
-
-        $(document).ready(function(){
-
-            // alert('hi');
-
-            $("#carr-1").css("display","block");
-
-            $("#carr-2").css("display","none");
-
-            $("#carr-3").css("display","none");
-
-             $("heads-1").css("display","block");
-
-            $("#heads-2").css("display","none");
-
-            $("#heads-3").css("display","none");
-
-
-
-            $('.arrow-btn').click(function(){
-
-            i++;
-
-            i=i%3;
-
-
-
-
-
-            if(i==0){
-
-                $("#carr-1").css("display","block");
-
-                $("#carr-2").css("display","none");
-
-                $("#carr-3").css("display","none");
-
-
-
-                  $("#heads-1").css("display","block");
-
-                  $("#heads-2").css("display","none");
-
-                 $("#heads-3").css("display","none");
-
-
-
-                    }
-
-            else if(i==1){
-
-                $("#carr-2").css("display","block");
-
-                $("#carr-1").css("display","none");
-
-                $("#carr-3").css("display","none");
-
-
-
-                  $("#heads-2").css("display","block");
-
-                  $("#heads-3").css("display","none");
-
-                  $("#heads-1").css("display","none");
-
-
-
-              }else{
-
-                $("#carr-3").css("display","block");
-
-                $("#carr-2").css("display","none");
-
-                $("#carr-1").css("display","none");
-
-
-
-                  $("#heads-3").css("display","block");
-
-                  $("#heads-2").css("display","none");
-
-                  $("#heads-1").css("display","none");
-
-
-
-             }
-
-            });
-
-
-
-        });
-
-</script>
-
+        </footer>
+    </body>
+    <script>
+    var i =0;
+    $(document).ready(function(){
+    // alert('hi');
+    $("#carr-1").css("display","block");
+    $("#carr-2").css("display","none");
+    $("#carr-3").css("display","none");
+    $("heads-1").css("display","block");
+    $("#heads-2").css("display","none");
+    $("#heads-3").css("display","none");
+    $('.arrow-btn').click(function(){
+    i++;
+    i=i%3;
+    if(i==0){
+    $("#carr-1").css("display","block");
+    $("#carr-2").css("display","none");
+    $("#carr-3").css("display","none");
+    $("#heads-1").css("display","block");
+    $("#heads-2").css("display","none");
+    $("#heads-3").css("display","none");
+    }
+    else if(i==1){
+    $("#carr-2").css("display","block");
+    $("#carr-1").css("display","none");
+    $("#carr-3").css("display","none");
+    $("#heads-2").css("display","block");
+    $("#heads-3").css("display","none");
+    $("#heads-1").css("display","none");
+    }else{
+    $("#carr-3").css("display","block");
+    $("#carr-2").css("display","none");
+    $("#carr-1").css("display","none");
+    $("#heads-3").css("display","block");
+    $("#heads-2").css("display","none");
+    $("#heads-1").css("display","none");
+    }
+    });
+    });
+    </script>
 </html>

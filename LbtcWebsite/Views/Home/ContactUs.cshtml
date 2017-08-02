@@ -1,283 +1,216 @@
 ﻿@using Microsoft.AspNet.Identity
 @{
-    ViewBag.Title = "Contact";
-    Layout = null;
+ViewBag.Title = "Contact";
+Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Let's Be The Change</title>
-
-    <meta content="" name="description">
-    <meta content="" name="author">
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
-
-
-    <link href="~/Content/skeleton.css" rel="stylesheet" />
-    <link href="~/Content/normalize.css" rel="stylesheet" />
-    <link href="~/Content/style.css" rel="stylesheet" />
-
-    <link href="~/Content/Images/Logoo.png" rel="icon" type="image/png">
-
-    <!-- Scripts -->
-
-    <script src="~/Scripts/jquery-3.1.1.js"></script>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="~/Scripts/script.js"></script>
-
-
-
-    <!-- font -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-    <link href="~/Content/semantic.css" rel="stylesheet" />
-
-    <style type="text/css">
-            body
-            {
-                background-color: #212121;
-            }
-            h1 {
-                color: white;
-                font-size: 50px;
-                font-family: sans-serif;
-            }
-            p, .li {
-                color: white;
-                font-size: 21px;
-                font-family: Raleway;
-                text-align: justify;
-            }
-            #heading, #main{
-                padding-left: 25px;
-                text-align: right;
-            }
-            .landmark{
-                text-align: justify;
-                height: 190px;
-                box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-                background-color: #fff;
-                padding: 12px;
-                margin: 0 auto;
-            }
-            .but{
-                color:white;
-            }
-            .black-text
-            {
-                color: #ccc !important;
-            }
-            .forms{
-                margin: 20px 0 20px 0;
-            }
-            .details{
-                margin-top: 40px;
-            }
-            .form-group{
-                margin-right: 20px;
-            }
-            .social_icons{
-                width: 1.5em;
-                height: 1.5em;
-                margin: 0 5px 0 5px;
-            }
-            @@media screen and (min-width: 992px) and (max-width: 1200px)
-            {
-                .embed-responsive-item{
-                    height: 250px;
-                    width: 550px;
-                }
-                .form-group{
-                    margin-right: 10px;
-                }
-                .forms{
-                    margin: 10px 0 10px 0;
-                }
-                .details{
-                    margin-top: 20px;
-                }
-            }
-            @@media screen and  (max-width: 991px){
-                    .embed-responsive-item{
-                        height: 200px;
-                        width: 450px;
-                    }
-            }
-
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-
-        <div class="container-fluid">
-
-
-
-            <!-- logo -->
-
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" onclick='$("#mainNavBar").toggleClass("collapse")' data-target="#mainNavBar">
-
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Let's Be The Change</title>
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <!-- Mobile Specific Metas
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
+        <link href="~/Content/skeleton.css" rel="stylesheet" />
+        <link href="~/Content/normalize.css" rel="stylesheet" />
+        <link href="~/Content/style.css" rel="stylesheet" />
+        <link href="~/Content/Images/Logoo.png" rel="icon" type="image/png">
+        <!-- Scripts -->
+        <script src="~/Scripts/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="~/Scripts/script.js"></script>
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link href="~/Content/semantic.css" rel="stylesheet" />
+        <style type="text/css">
+        body
+        {
+        background-color: #212121;
+        }
+        h1 {
+        color: white;
+        font-size: 50px;
+        font-family: sans-serif;
+        }
+        p, .li {
+        color: white;
+        font-size: 21px;
+        font-family: Raleway;
+        text-align: justify;
+        }
+        #heading, #main{
+        padding-left: 25px;
+        text-align: right;
+        }
+        .landmark{
+        text-align: justify;
+        height: 190px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+        background-color: #fff;
+        padding: 12px;
+        margin: 0 auto;
+        }
+        .but{
+        color:white;
+        }
+        .black-text
+        {
+        color: #ccc !important;
+        }
+        .forms{
+        margin: 20px 0 20px 0;
+        }
+        .details{
+        margin-top: 40px;
+        }
+        .form-group{
+        margin-right: 20px;
+        }
+        .social_icons{
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0 5px 0 5px;
+        }
+        @@media screen and (min-width: 992px) and (max-width: 1200px)
+        {
+        .embed-responsive-item{
+        height: 250px;
+        width: 550px;
+        }
+        .form-group{
+        margin-right: 10px;
+        }
+        .forms{
+        margin: 10px 0 10px 0;
+        }
+        .details{
+        margin-top: 20px;
+        }
+        }
+        @@media screen and  (max-width: 991px){
+        .embed-responsive-item{
+        height: 200px;
+        width: 450px;
+        }
+        }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- logo -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" onclick='$("#mainNavBar").toggleClass("collapse")' data-target="#mainNavBar">
                     <span class="icon-bar"></span>
-
                     <span class="icon-bar"></span>
-
                     <span class="icon-bar"></span>
-
-                </button>
-
-                <a href="#" class="navbar-brand"><span class="lbtc-logo"><img src="~/Content/Images/logoo.png" alt="lbtc logo"></span></a>
-
-            </div>
-
-
-
-            <!--Menu Items -->
-
-            <div class="collapse navbar-collapse" id="mainNavBar" style="overflow-x:hidden !important;">
-
-                <ul class="nav navbar-nav navbar-right">
-
-
-
-                    <!-- normal menu items -->
-
-                    <li><a class="active" href="Home/Index">Home</a></li>
-
-                    <li><a href="/Home/Gallery">Gallery</a></li>
-
-                    <li><a href="/Home/About">About</a></li>
-                    <li><a href="/Home/ContactUs">Contact Us</a></li>
-
-                    <li><a href="https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form">Join Us</a></li>
-
-                    @if (User.IsInRole("Admin"))
-                    {
+                    </button>
+                    <a href="#" class="navbar-brand"><span class="lbtc-logo"><img src="~/Content/Images/logoo.png" alt="lbtc logo"></span></a>
+                </div>
+                <!--Menu Items -->
+                <div class="collapse navbar-collapse" id="mainNavBar" style="overflow-x:hidden !important;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- normal menu items -->
+                        <li><a class="" href="Home/Index">Home</a></li>
+                        <li><a href="/Home/Gallery">Gallery</a></li>
+                        <li><a href="/Home/About">About</a></li>
+                        <li><a href="/Home/ContactUs" class="active">Contact Us</a></li>
+                        <li><a href="https://docs.google.com/forms/d/15-tjJXfBaDbWk0rmbdkApqbhYhguC_ou7w9o9iFUYUQ/viewform?usp=send_form">Join Us</a></li>
+                        @if (User.IsInRole("Admin"))
+                        {
                         <li><a href="/Admin/GetDonations">View Donate</a></li>
                         <li><a href="/Admin/ViewUsers">View Users</a></li>
-                    }
-                    else
-                    {
+                        }
+                        else
+                        {
                         <li><a href="/Donate/EnterAmount">Donate</a></li>
-                    }
-
-                    @if (Request.IsAuthenticated)
-                    {
+                        }
+                        @if (Request.IsAuthenticated)
+                        {
                         using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                         {
-                            @Html.AntiForgeryToken()
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                </li>
-                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                            </ul>
+                        @Html.AntiForgeryToken()
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                            </li>
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                        </ul>
                         }
-                    }
-                    else
-                    {
+                        }
+                        else
+                        {
                         <ul class="nav navbar-nav navbar-right">
                             <li>@Html.ActionLink("Log in/Register", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                         </ul>
-                    }
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 col-xs-10 col-md-offset-2 col-xs-offset-2" id="heading">
-                <h1>Contact Us</h1>
-            </div>
-        </div>
-        <div class="details">
-            <div class="row forms">
-                <div class="col-md-12 col-xs-12 col-md-offset-2 col-xs-offset-2">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Name">
-                        </div><br /><br />
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div><br /><br />
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="phone" placeholder="Phone">
-                        </div><br /><br />
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Message" rows="4"></textarea>
-                        </div><br /><br />  
-                        <div class="form-group">
-                            <button type="button" class="btn btn-secondary but" onclick="#">Send Message</button>
-                        </div><br /><br />  
-                    </form>
+                        }
+                    </ul>
                 </div>
             </div>
-
-            <div class="row forms">
-                <div class="col-md-9 col-xs-10 col-md-offset-2 col-xs-offset-2">
-                    <iframe class="embed-responsive-item" width="847" height="350" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCrq40gJI06WA3RDhmE4mep1Y3kLMCblxM &q=Let's+Be+The+Change,+1062,+25th+Main+Rd,+Siddanna+Layout,+Banashankari+Stage+II,+Banashankari,+Bengaluru,+Karnataka+560070,+India" allowfullscreen></iframe>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-xs-10 col-md-offset-2 col-xs-offset-2" id="heading">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+            <div class="details">
+                <div class="row forms">
+                    <div class="col-md-12 col-xs-12 col-md-offset-2 col-xs-offset-2">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div><br /><br />
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div><br /><br />
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="phone" placeholder="Phone">
+                            </div><br /><br />
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Message" rows="4"></textarea>
+                            </div><br /><br />
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary but" onclick="#">Send Message</button>
+                            </div><br /><br />
+                        </form>
+                    </div>
+                </div>
+                <div class="row forms">
+                    <div class="col-md-9 col-xs-10 col-md-offset-2 col-xs-offset-2">
+                        <iframe class="embed-responsive-item" width="847" height="350" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCrq40gJI06WA3RDhmE4mep1Y3kLMCblxM &q=Let's+Be+The+Change,+1062,+25th+Main+Rd,+Siddanna+Layout,+Banashankari+Stage+II,+Banashankari,+Bengaluru,+Karnataka+560070,+India" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-<footer>
-
-    <div class="row">
-
-        <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-            <a href="#"><img src="~/Content/Images/Icons/Contact-phone.svg" alt="phone"></a>
-
-        </div>
-
-        <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-            <a href="#"><img src="~/Content/Images/Icons/Contact-email.svg" alt="email"></a>
-
-        </div>
-
-        <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-            <a href="https://www.facebook.com/LBTCIndia/"><img src="~/Content/Images/Icons/Contact-facebook.svg" alt="facebook"></a>
-
-        </div>
-
-        <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
-
-            <a href="https://www.instagram.com/lbtcindia/"><img src="~/Content/Images/Icons/Contact-instagram.svg" alt="instagram"></a>
-
-        </div>
-
-    </div>
-    <div class="row">
-        <a href="https://www.facebook.com/The-Rassm-676196475915110/?notif_t=page_fan&notif_id=1497624182452932"><h3>Powered By Team RaSSm</h3></a>
-    </div>
-
-</footer>
+        <footer>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="#"><img src="~/Content/Images/Icons/Contact-phone.svg" alt="phone"></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="#"><img src="~/Content/Images/Icons/Contact-email.svg" alt="email"></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="https://www.facebook.com/LBTCIndia/"><img src="~/Content/Images/Icons/Contact-facebook.svg" alt="facebook"></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 footer-icon">
+                    <a href="https://www.instagram.com/lbtcindia/"><img src="~/Content/Images/Icons/Contact-instagram.svg" alt="instagram"></a>
+                </div>
+            </div>
+            <div class="row">
+                <a href="https://www.facebook.com/The-Rassm-676196475915110/?notif_t=page_fan&notif_id=1497624182452932"><h3>Powered By Team RaSSm</h3></a>
+            </div>
+        </footer>
     </body>
 </html>
