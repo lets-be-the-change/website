@@ -20,7 +20,7 @@ namespace LbtcWebsite
     {
         public Task SendAsync(IdentityMessage message)
         {
-            var email = new MailMessage(new MailAddress("admin@letsbethechange.in "),
+            var email = new MailMessage(new MailAddress("noreply@letsbethechange.in"),
                 new MailAddress(message.Destination));
             email.Subject = message.Subject;
             email.Body = message.Body;
@@ -29,7 +29,7 @@ namespace LbtcWebsite
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = "admin@letsbethechange.in",
+                    UserName = "noreply@letsbethechange.in",
                     Password = "Adithya_123"
                 };
                 smtp.Credentials = credential;
